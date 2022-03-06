@@ -1,0 +1,12 @@
+.left-code {
+    /*float: left;*/
+    display: inline-block;
+}
+
+.right-result {
+    display: inline-block;
+}
+
+li  {
+    list-style: none;
+}
