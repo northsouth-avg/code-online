@@ -62,7 +62,7 @@ export default class Login extends Component {
         const {registerVisible} = this.state
         return (
             <div className="login-bgc">
-                <div className="system-name">欢迎使用在线代码运行系统</div>
+                <div className="system-name">欢迎使用Python小站</div>
                 <section className="login-content">
                     <h2 className="h2">用户登录</h2>
                     <Form className='login-form' ref={this.loginRef}>

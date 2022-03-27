@@ -30,26 +30,6 @@ export default class EditCode extends Component {
 
     onCodeBlur = (event, e) => {
         const value2 = e.getValue(); // 获取代码内容
-        // console.log(value2);
-
-        // const APP_ID = "1172"
-        // const APP_SECRET = "675871a2bf49ac1582261c56d146690a"
-        //
-        // let code = value2;
-        // let inputStr = "";
-        // let lang = "py";
-        //
-        // const codebuff = encodeURIComponent(Base64.encode(code));
-        // // const inputbuff = encodeURIComponent(Base64.encode(inputStr));
-        // let sign = md5(code + inputStr + APP_SECRET)
-
-        // const data = {
-        //     "appId": APP_ID,
-        //     "sign": sign,
-        //     "lang": lang,
-        //     "code": codebuff,
-        //     // "input": inputbuff,
-        // }
         axios.post('http://localhost:8090/code/codeInfo', {data: value2})
             .then(res => {
                 console.log(res.data.msg)
@@ -61,42 +41,6 @@ export default class EditCode extends Component {
             }).catch(err => {
             console.log(err)
         })
-        //
-        // axios({
-        //     method: 'post',
-        //     url: 'https://jsrun.net/api/run/v2',
-        //     headers: {
-        //         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-        //     },
-        //     params: data
-        // }).then(res => {
-        //     console.log(res.data)
-        //     alert(res.data)
-        // }).catch(err => {
-        //     console.log(err)
-        //     alert(err)
-        //
-        // })
-
-        // axios({
-        //     method: 'post',
-        //     url: 'https://api.toolnb.com/ext/topnowdata.json',
-        //     headers: {
-        //         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-        //     },
-        //     params: {
-        //         code:value2,
-        //         token:'1eaab8cb95ae7de126d44247eb1992a9',
-        //         code_type:"python"
-        //     }
-        // }).then(res => {
-        //     console.log(res.data)
-        //     alert(res.data)
-        // }).catch(err => {
-        //     console.log(err)
-        //     alert(err)
-        //
-        // })
     }
 
 
@@ -104,7 +48,9 @@ export default class EditCode extends Component {
         return (
             <div style={{position:"relative"}}>
                 <div>
-                    <Button type='primary' onClick={this.runCode}>运行</Button>
+                    <Button type='primary' onClick={this.runCode} style={{marginBottom:"10px"}}>
+                        运行
+                    </Button>
                 </div>
                 <div style={{float:'left'}}>
                     <AceEditor
@@ -133,8 +79,9 @@ export default class EditCode extends Component {
                         }}
                     />
                     <div>
-                        <Button type='success' onClick={this.runCode} className="btn-code">运行结果</Button>
-                        {/*<input type="text" value={this.state.codeRes}/>*/}
+                        <Button type='success' onClick={this.runCode} className="btn-code">
+                            运行结果
+                        </Button>
                         <div>
                             <div className="code-result">
                                 代码的运行结果：{this.state.codeRes}

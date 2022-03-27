@@ -7,6 +7,10 @@ import EditCode from "./editCode";
 import Logout from "./logout";
 import HistoryCode from "./historyCode";
 import HelpWord from "./helpWord";
+import WorkInfo from './workInfo';
+import OnlineCourse from './onlineCourse';
+
+import '../css/home.css'
 
 const {Header, Content, Footer, Sider} = Layout;
 const {SubMenu} = Menu;
@@ -31,7 +35,7 @@ export default class Home extends Component {
                                 color: 'white',
                                 fontSize: '25px',
                                 marginLeft: '30px',
-                            }}>在线代码运行系统</h2>
+                            }}>Pyhton小站</h2>
                         </div>
                         <div>
                             <h2>
@@ -52,17 +56,25 @@ export default class Home extends Component {
                             style={{height: '100%', borderRight: 0}}
                         >
                             <SubMenu key='sub1' icon={<UserOutlined/>} title='功能板块'>
-                                <Menu.Item key='1'>
+                                <Menu.Item key='1' className='menu-item'>
                                     {/*todo*/}
-                                    <NavLink to='/home/edit'>python编辑</NavLink>
+                                    <NavLink to='/home/edit'>代码编辑</NavLink>
                                 </Menu.Item>
-                                <Menu.Item key='2'>
+                                <Menu.Item key='2' className='menu-item'>
                                     {/*todo*/}
                                     <NavLink to='/home/historyCode'>历史记录</NavLink>
                                 </Menu.Item>
-                                <Menu.Item key='3'>
+                                <Menu.Item key='3' className='menu-item'>
                                     {/*todo*/}
-                                    <NavLink to='/home/helpWord'>帮助文档</NavLink>
+                                    <NavLink to='/home/helpWord' >帮助文档</NavLink>
+                                </Menu.Item>
+                                <Menu.Item key='4' className='menu-item'>
+                                    {/*todo*/}
+                                    <NavLink to='/home/workInfo' >招聘信息</NavLink>
+                                </Menu.Item>
+                                <Menu.Item key='5' className='menu-item'>
+                                    {/*todo*/}
+                                    <NavLink to='/home/onlineCourse'>网课</NavLink>
                                 </Menu.Item>
                             </SubMenu>
                         </Menu>
@@ -80,8 +92,8 @@ export default class Home extends Component {
                             <Route path='/home/edit' component={EditCode}/>
                             <Route path='/home/historyCode' component={HistoryCode}/>
                             <Route path='/home/helpWord' component={HelpWord}/>
-
-
+                            <Route path='/home/workInfo' component={WorkInfo}/>
+                            <Route path='/home/onlineCourse' component={OnlineCourse}/>
                             {/*</Switch>*/}
 
                         </Content>
