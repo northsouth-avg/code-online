@@ -74,7 +74,7 @@ export default class Home extends Component {
                                 </Menu.Item>
                                 <Menu.Item key='5' className='menu-item'>
                                     {/*todo*/}
-                                    <NavLink to='/home/onlineCourse'>网课</NavLink>
+                                    <NavLink to='/home/onlineCourse'>教程推荐</NavLink>
                                 </Menu.Item>
                             </SubMenu>
                         </Menu>
